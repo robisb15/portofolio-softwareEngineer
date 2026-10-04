@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills &amp; Software | Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fff4ec; color: #292522; font-family: Arial, Helvetica, sans-serif; }
+    .skills { --ink: #292522; --muted: #695c52; --accent: #a94710; padding: 88px 7% 80px; background: #fff4ec; color: var(--ink); }
+    .skills__inner { max-width: 1050px; margin-inline: auto; }
+    .skills__intro { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 60px; margin-bottom: 46px; }
+    .skills__label { margin: 0 0 13px; color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+    .skills h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 3.7vw, 46px); font-weight: 700; line-height: 1.14; letter-spacing: -.035em; }
+    .skills__description { max-width: 370px; margin: 0 0 3px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .skills__body { display: grid; grid-template-columns: .85fr 1.15fr; gap: 72px; align-items: start; }
+    .skills__heading { margin: 0 0 19px; font-size: 15px; font-weight: 700; }
+    .skills__list { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+    .skills__list li { display: flex; align-items: baseline; gap: 10px; font-size: 14px; line-height: 1.6; }
+    .skills__list li::before { content: '+'; color: var(--accent); font-size: 17px; font-weight: 400; }
+    .skills__note { margin: 25px 0 0; font-size: 12px; color: var(--muted); line-height: 1.7; max-width: 310px; }
+    .skills__software { min-width: 0; }
+    .skills__tool-strip { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 24px; background: #fff; border: 1px solid #efdfd2; border-radius: 8px; }
+    .skills__strip-label { display: flex; gap: 9px; align-items: center; flex-shrink: 0; font-size: 14px; font-weight: 700; white-space: nowrap; }
+    .skills__chevrons { color: var(--accent); font-size: 18px; font-weight: 400; }
+    .skills__icons { display: flex; align-items: center; justify-content: space-between; gap: 19px; margin: 0; padding: 0; list-style: none; }
+    .skills__icon { display: grid; place-items: center; width: 36px; height: 36px; flex: 0 0 36px; }
+    .skills__icon svg { display: block; width: 32px; height: 32px; }
+    .skills__adobe { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 7px; font-family: Arial, Helvetica, sans-serif; font-size: 19px; font-weight: 600; letter-spacing: -.9px; }
+    .skills__adobe--ai { color: #ff9a00; background: #330000; }
+    .skills__adobe--ps { color: #31a8ff; background: #001e36; }
+    .skills__adobe--xd { color: #ff61f6; background: #470137; }
+    .skills__tool-details { margin: 23px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 23px 30px; }
+    .skills__tool-details dt { font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .skills__tool-details dd { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
+    @media (min-width: 768px) and (max-width: 1023px) { .skills { padding: 64px 5%; } .skills__body { grid-template-columns: .8fr 1.2fr; gap: 32px; } .skills__list { grid-template-columns: 1fr; gap: 11px; } .skills__tool-strip { padding: 20px 17px; gap: 15px; } .skills__icons { gap: 12px; } .skills__intro { gap: 32px; } }
+    @media (max-width: 767px) { .skills { padding: 48px 6%; } .skills__intro { grid-template-columns: 1fr; gap: 18px; margin-bottom: 32px; } .skills__description { max-width: 470px; } .skills__body { grid-template-columns: 1fr; gap: 35px; } .skills__note { max-width: none; margin-top: 18px; } .skills__tool-strip { justify-content: flex-start; gap: 28px; } .skills__tool-details { gap: 23px 22px; } }
+    @media (max-width: 399px) { .skills__tool-strip { flex-wrap: wrap; gap: 15px; padding: 19px; } .skills__icons { width: 100%; justify-content: flex-start; gap: 22px; } .skills__list { gap: 13px 12px; font-size: 13px; } }
+  </style>
+</head>
+<body>
+<section class="skills" id="skills" aria-labelledby="skills-title">
+  <div class="skills__inner">
+    <header class="skills__intro">
+      <div>
+        <p class="skills__label">Creative toolkit</p>
+        <h2 id="skills-title">Skills &amp; Software</h2>
+      </div>
+      <p class="skills__description">Keterampilan desain dan perangkat untuk menyusun ide, membuat visual, dan mengembangkan prototipe.</p>
+    </header>
+    <div class="skills__body">
+      <div>
+        <h3 class="skills__heading">Design skills</h3>
+        <ul class="skills__list" aria-label="Contoh keterampilan desain">
+          <li>UI Design</li>
+          <li>UX Design</li>
+          <li>Wireframing</li>
+          <li>Prototyping</li>
+          <li>Visual Design</li>
+          <li>Photo Editing</li>
+        </ul>
+        <p class="skills__note">Contoh daftar keterampilan dan software. Sesuaikan dengan keahlian serta perangkat yang Anda gunakan.</p>
+      </div>
+      <div class="skills__software">
+        <div class="skills__tool-strip">
+          <div class="skills__strip-label">Design Tools <span class="skills__chevrons" aria-hidden="true">»</span></div>
+          <ul class="skills__icons" aria-label="Software desain">
+            <li class="skills__icon" aria-label="Figma">
+              <svg viewBox="0 0 32 36" aria-hidden="true"><path fill="#f24e1e" d="M16 0H9a6 6 0 000 12h7z"/><path fill="#ff7262" d="M16 0h7a6 6 0 010 12h-7z"/><path fill="#a259ff" d="M16 12H9a6 6 0 000 12h7z"/><circle fill="#1abcfe" cx="22" cy="18" r="6"/><path fill="#0acf83" d="M16 24H9a6 6 0 106 6v-6z"/></svg>
+            </li>
+            <li class="skills__icon" aria-label="Adobe Illustrator"><span class="skills__adobe skills__adobe--ai" aria-hidden="true">Ai</span></li>
+            <li class="skills__icon" aria-label="Adobe Photoshop"><span class="skills__adobe skills__adobe--ps" aria-hidden="true">Ps</span></li>
+            <li class="skills__icon" aria-label="Adobe XD"><span class="skills__adobe skills__adobe--xd" aria-hidden="true">Xd</span></li>
+          </ul>
+        </div>
+        <dl class="skills__tool-details">
+          <div><dt>Figma</dt><dd>Antarmuka &amp; prototipe</dd></div>
+          <div><dt>Adobe Illustrator</dt><dd>Ilustrasi &amp; grafis vektor</dd></div>
+          <div><dt>Adobe Photoshop</dt><dd>Editing &amp; komposisi foto</dd></div>
+          <div><dt>Adobe XD</dt><dd>Wireframe &amp; desain interaksi</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

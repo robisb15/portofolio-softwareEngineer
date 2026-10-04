@@ -1,0 +1,8 @@
+.project-track{cursor:grab;touch-action:pan-x pan-y;overscroll-behavior-x:contain}
+.project-track.is-dragging{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.project-track.is-dragging *{cursor:grabbing;user-select:none}
+.gallery-status .gallery-hint{float:right;font-size:11px}
+.project-visual .project-image{transition:transform .35s ease}
+@media(hover:hover){.project-visual:hover .project-image{transform:translateY(-3px)}.button{transition:background .2s,transform .2s}.button:hover{transform:translateY(-2px)}}
+@media(max-width:480px){.gallery-status .gallery-hint{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.project-visual .project-image,.button{transition:none!important;transform:none!important}}

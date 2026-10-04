@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selected Projects | Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eee; font-family: Arial, Helvetica, sans-serif; color: #151515; }
+    button { font: inherit; }
+    .projects { --page-gutter: max(24px, calc((100vw - 1200px) / 2)); padding: 64px 0 48px; overflow: hidden; background: #eee; }
+    .projects__header { margin: 0 var(--page-gutter) 48px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+    .projects__eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 17px; padding: 7px 12px; border: 1px solid #aaa; border-radius: 30px; font-size: 12px; font-weight: 600; }
+    .projects__eyebrow::before { content: ''; width: 5px; height: 5px; background: #db8654; border-radius: 50%; }
+    .projects h2 { margin: 0; font-size: clamp(36px, 4.8vw, 62px); font-weight: 500; line-height: 1.05; letter-spacing: -.065em; }
+    .projects__navigation { display: flex; gap: 10px; padding-bottom: 4px; }
+    .projects__nav { display: inline-flex; align-items: center; justify-content: center; gap: 13px; min-height: 44px; padding: 0 19px; border: 0; border-radius: 30px; background: #fff; color: #151515; cursor: pointer; font-size: 12px; font-weight: 700; }
+    .projects__nav:disabled { opacity: .4; cursor: default; }
+    .projects__nav:not(:disabled):hover { background: #dcfa43; }
+    .projects__nav span { font-size: 19px; }
+    .projects__track { display: grid; grid-auto-flow: column; grid-auto-columns: min(720px, 76vw); gap: 18px; padding: 0 var(--page-gutter) 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--page-gutter); scrollbar-width: none; }
+    .projects__track::-webkit-scrollbar { display: none; }
+    .project-card { min-width: 0; display: grid; grid-template-columns: 1.1fr 1fr; gap: 26px; padding: 28px; min-height: 420px; background: #fff; border-radius: 28px; scroll-snap-align: start; }
+    .project-card__content { display: flex; flex-direction: column; align-items: flex-start; padding: 3px 0; }
+    .project-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .project-card__tag { background: #f7f7f7; border-radius: 20px; padding: 5px 9px; font-size: 11px; font-weight: 600; }
+    .project-card h3 { margin: 0; max-width: 270px; font-size: 27px; line-height: 1.16; font-weight: 600; letter-spacing: -1px; }
+    .project-card__summary { margin: auto 0 22px; padding-top: 55px; max-width: 240px; font-size: 13px; line-height: 1.5; color: #626262; }
+    .project-card__button { border: 1px solid #efefef; border-radius: 30px; background: #fff; padding: 5px 5px 5px 17px; display: inline-flex; align-items: center; gap: 23px; color: #141414; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; box-shadow: 0 4px 10px #00000006; }
+    .project-card__button span { display: grid; place-items: center; width: 33px; height: 33px; border-radius: 50%; background: #111; color: #fff; font-size: 19px; }
+    .project-card__button:hover span { background: #d6f83c; color: #111; }
+    .project-card__visual { margin: 0; min-width: 0; position: relative; overflow: hidden; border-radius: 21px; background: #ffd02e; }
+    .project-card__visual img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .project-card__visual--lime { background: #d8fa35; }
+    .project-card__sticker { position: absolute; top: 26px; right: 12px; transform: rotate(8deg); background: #c9fc43; border-radius: 30px; padding: 12px 17px; font-size: 12px; font-weight: 700; color: #263500; }
+    .project-card__visual--lime .project-card__sticker { top: auto; bottom: 25px; transform: rotate(-8deg); background: #fff; color: #222; }
+    .projects__status { margin: 6px var(--page-gutter) 0; color: #656565; font-size: 12px; }
+    .projects :focus-visible, .project-dialog :focus-visible { outline: 3px solid #6d7317; outline-offset: 5px; }
+    .project-dialog { width: min(560px, calc(100% - 32px)); max-height: 85dvh; padding: 30px; border: 0; border-radius: 24px; color: #151515; background: #fff; }
+    .project-dialog::backdrop { background: #1119; }
+    .project-dialog__close { float: right; min-width: 44px; min-height: 44px; border: 0; border-radius: 50%; background: #eee; color: #151515; cursor: pointer; font-size: 24px; }
+    .project-dialog h2 { margin: 10px 50px 22px 0; font-size: 28px; letter-spacing: -1px; }
+    .project-dialog p { color: #555; font-size: 15px; line-height: 1.7; }
+    .project-dialog__note { border-top: 1px solid #ddd; padding-top: 15px; font-size: 12px!important; }
+    @media (prefers-reduced-motion: no-preference) { .project-card__button span, .projects__nav { transition: background .2s, transform .2s; } .project-card__button:hover span { transform: rotate(45deg); } }
+    @media (min-width: 1440px) { .projects__track { grid-auto-columns: 760px; } }
+    @media (max-width: 767px) { .projects { padding-top: 40px; } .projects__header { align-items: flex-start; flex-direction: column; margin-bottom: 26px; gap: 24px; } .projects h2 { font-size: 42px; } .projects__track { grid-auto-columns: calc(100vw - 48px); gap: 14px; } .project-card { padding: 20px; gap: 20px; grid-template-columns: 1fr; border-radius: 24px; } .project-card__visual { grid-row: 1; aspect-ratio: 1.12; max-height: 320px; } .project-card__visual img { object-position: center 42%; } .project-card h3 { font-size: 26px; max-width: none; } .project-card__tags { margin-bottom: 12px; } .project-card__summary { max-width: none; padding-top: 18px; margin-bottom: 20px; } .projects__eyebrow { margin-bottom: 16px; } }
+  </style>
+</head>
+<body>
+<!-- Section mandiri: salin CSS, section, dialog, dan script untuk integrasi.
+     Konten proyek merupakan contoh. Ganti teks dan assets dengan karya Anda. -->
+<section class="projects" id="portfolio" aria-labelledby="projects-title">
+  <header class="projects__header">
+    <div><p class="projects__eyebrow">Our Projects</p><h2 id="projects-title">Selected Projects</h2></div>
+    <div class="projects__navigation" aria-label="Navigasi proyek">
+      <button class="projects__nav" id="project-prev" type="button" aria-label="Proyek sebelumnya" aria-controls="project-track" disabled><span aria-hidden="true">←</span> Prev</button>
+      <button class="projects__nav" id="project-next" type="button" aria-label="Proyek berikutnya" aria-controls="project-track">Next <span aria-hidden="true">→</span></button>
+    </div>
+  </header>
+  <div class="projects__track" id="project-track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Galeri proyek, gunakan tombol panah untuk menggeser">
+    <article class="project-card" aria-label="Proyek 1 dari 2">
+      <div class="project-card__content">
+        <div class="project-card__tags"><span class="project-card__tag">TikTok</span><span class="project-card__tag">YouTube</span></div>
+        <h3>Short-Form Video Production</h3>
+        <p class="project-card__summary">Konten video vertikal, dari konsep kreatif hingga hasil akhir. Dirancang untuk menarik perhatian dan menyampaikan cerita dengan singkat.</p>
+        <button type="button" class="project-card__button" data-project="video">View Project <span aria-hidden="true">↗</span></button>
+      </div>
+      <figure class="project-card__visual"><img src="assets/project-video.png" alt="Ilustrasi kreator berbicara di studio dalam komposisi kuning dengan ornamen krom" width="1086" height="1448" fetchpriority="high"><span class="project-card__sticker">Made to connect</span></figure>
+    </article>
+    <article class="project-card" aria-label="Proyek 2 dari 2">
+      <div class="project-card__content">
+        <div class="project-card__tags"><span class="project-card__tag">TikTok</span><span class="project-card__tag">Instagram</span></div>
+        <h3>Creator Partnerships</h3>
+        <p class="project-card__summary">Konsep kampanye yang mempertemukan brand dan kreator. Menghubungkan cerita, gaya visual, dan audiens dalam kolaborasi yang terasa natural.</p>
+        <button type="button" class="project-card__button" data-project="creator">View Project <span aria-hidden="true">↗</span></button>
+      </div>
+      <figure class="project-card__visual project-card__visual--lime"><img src="assets/project-creator.png" alt="Ilustrasi kreator memegang kamera dengan latar hijau limau dan ornamen krom" width="1086" height="1448" loading="lazy"><span class="project-card__sticker">Better together</span></figure>
+    </article>
+  </div>
+  <p class="projects__status" id="project-status" aria-live="polite" aria-atomic="true">01 / 02</p>
+</section>
+<dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
+  <button type="button" class="project-dialog__close" aria-label="Tutup detail proyek">×</button>
+  <h2 id="project-dialog-title"></h2>
+  <p id="project-dialog-description"></p>
+  <p class="project-dialog__note">Proyek demonstrasi untuk template portofolio. Teks dan ilustrasi ini dapat diganti dengan karya Anda sendiri.</p>
+</dialog>
+<script>
+(() => {
+  const track = document.getElementById('project-track');
+  const cards = [...track.querySelectorAll('.project-card')];
+  const previous = document.getElementById('project-prev');
+  const next = document.getElementById('project-next');
+  const status = document.getElementById('project-status');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let current = 0;
+  function update() {
+    const end = track.scrollWidth - track.clientWidth;
+    previous.disabled = track.scrollLeft < 2;
+    next.disabled = track.scrollLeft >= end - 2;
+    const step = cards[1].offsetLeft - cards[0].offsetLeft;
+    current = next.disabled ? cards.length - 1 : Math.min(cards.length - 1, Math.round(track.scrollLeft / step));
+    status.textContent = `${String(current + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
+  }
+  function move(direction) {
+    const step = cards[1].offsetLeft - cards[0].offsetLeft;
+    track.scrollBy({ left: direction * step, behavior: reduceMotion.matches ? 'instant' : 'smooth' });
+  }
+  previous.addEventListener('click', () => move(-1));
+  next.addEventListener('click', () => move(1));
+  track.addEventListener('scroll', update, { passive: true });
+  track.addEventListener('keydown', event => {
+    if (event.target !== track) return;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') { event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1); }
+  });
+  new ResizeObserver(update).observe(track);
+  const details = {
+    video: { title: 'Short-Form Video Production', description: 'Eksplorasi produksi video vertikal untuk TikTok dan YouTube Shorts. Ruang lingkup meliputi pengembangan ide, storyboard, editing, subtitle, dan penyesuaian format untuk setiap platform.' },
+    creator: { title: 'Creator Partnerships', description: 'Eksplorasi kampanye kolaborasi antara brand dan kreator. Ruang lingkup meliputi pemilihan arah kreatif, penyusunan brief, perencanaan konten, serta konsistensi visual untuk TikTok dan Instagram.' }
+  };
+  const dialog = document.getElementById('project-dialog');
+  document.querySelectorAll('[data-project]').forEach(button => button.addEventListener('click', () => {
+    const detail = details[button.dataset.project];
+    document.getElementById('project-dialog-title').textContent = detail.title;
+    document.getElementById('project-dialog-description').textContent = detail.description;
+    dialog.showModal();
+  }));
+  dialog.querySelector('button').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) { const bounds = dialog.getBoundingClientRect(); if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close(); } });
+  update();
+})();
+</script>
+</body>
+</html>

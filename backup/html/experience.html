@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education &amp; Experience — Portfolio</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#fff4ec;color:#292522;font-family:Arial,Helvetica,sans-serif}
+    .experience{padding:90px 7%;background:#fff4ec}.experience__inner{max-width:1050px;margin:auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
+    .experience__eyebrow{display:flex;align-items:center;gap:7px;margin:0 0 10px;color:#a56d48;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.experience__eyebrow::before{content:'';width:6px;height:6px;background:#ff7515;border-radius:50%}
+    .experience h2{font-family:Georgia,'Times New Roman',serif;font-size:30px;line-height:1.2;margin:0 0 33px;letter-spacing:-.8px}
+    .experience__skills{display:grid;grid-template-columns:repeat(2,1fr);gap:26px 30px;max-width:295px}.experience__skill{display:flex;flex-direction:column;align-items:center;gap:8px}.experience__skill-icon{display:grid;place-items:center;width:56px;height:56px;background:white;border-radius:50%;box-shadow:0 3px 12px #b7804d08}.experience__skill svg{width:30px;height:30px}.experience__skill-name{font-size:11px;font-weight:700;color:#61534b;background:#fff;padding:5px 10px;border-radius:3px}
+    .experience__tabs{display:flex;padding:4px;border:1px solid #efd2b6;background:white;border-radius:3px;margin-bottom:35px;box-shadow:0 2px 0 #efcba43b}.experience__tab{flex:1;border:0;background:transparent;padding:11px 8px;font:700 12px Arial,sans-serif;color:#423831;border-radius:2px;cursor:pointer}.experience__tab[aria-selected="true"]{background:#ff7515;color:white;box-shadow:0 3px 7px #ff75152b}.experience__tab:focus-visible{outline:2px solid #9c4200;outline-offset:3px}
+    .experience__list{display:grid;gap:17px;margin:0;padding:0;list-style:none}.experience__card{display:flex;align-items:center;gap:16px;background:white;padding:20px 21px;border-radius:4px;box-shadow:0 5px 16px #a5784e05}.experience__company-icon{flex:0 0 45px;height:45px;display:grid;place-items:center;border:1px solid #e8e3dc;border-radius:50%;color:#85817b;font:700 21px Georgia,serif}.experience__details{flex:1}.experience__details h3{font-family:Georgia,'Times New Roman',serif;font-size:16px;margin:0 0 7px}.experience__details p{font-size:10px;color:#9b9189;margin:0;line-height:1.6}.experience__period{text-align:right;flex-shrink:0}.experience__period strong{display:block;font-size:11px;font-weight:500;color:#ed843d;margin-bottom:7px}.experience__period span{display:block;font-size:10px;color:#9b9189}[hidden]{display:none!important}
+    @media(min-width:1500px){.experience{padding-top:115px;padding-bottom:115px}}@media(max-width:760px){.experience{padding:55px 6%}.experience__inner{grid-template-columns:1fr;gap:38px;max-width:520px}.experience h2{font-size:29px}.experience__skills{grid-template-columns:repeat(3,1fr);max-width:none;gap:24px 12px}.experience__tabs{margin-bottom:24px}.experience__card{padding:18px 15px;gap:12px}.experience__details h3{font-size:15px}}@media(max-width:370px){.experience__card{flex-wrap:wrap}.experience__period{margin-left:57px;text-align:left}.experience__period strong,.experience__period span{display:inline;margin-right:7px}}
+  </style>
+</head>
+<body>
+<!-- Salin section, CSS experience, dan script ke halaman portfolio Anda. -->
+<section class="experience" id="experience" aria-labelledby="experience-title">
+  <div class="experience__inner">
+    <div>
+      <p class="experience__eyebrow">My journey</p>
+      <h2 id="experience-title">Education &amp; Experience</h2>
+      <div class="experience__skills" aria-label="Keterampilan desain">
+        <div class="experience__skill"><span class="experience__skill-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#ffbf25" d="M7 7h18l6 9-15 15L1 16z"/><path fill="#ffe28b" d="M7 7l9 9L25 7z"/><path fill="#ffda60" d="M1 16h30L16 31z"/><path fill="#efa91a" d="M10 16h12l-6 15z"/></svg></span><span class="experience__skill-name">Sketch</span></div>
+        <div class="experience__skill"><span class="experience__skill-icon"><svg viewBox="0 0 32 36" aria-hidden="true"><path fill="#f24e1e" d="M16 0H9a6 6 0 000 12h7z"/><path fill="#ff7262" d="M16 0h7a6 6 0 010 12h-7z"/><path fill="#a259ff" d="M16 12H9a6 6 0 000 12h7z"/><circle fill="#1abcfe" cx="22" cy="18" r="6"/><path fill="#0acf83" d="M16 24H9a6 6 0 106 6v-6z"/></svg></span><span class="experience__skill-name">Figma</span></div>
+        <div class="experience__skill"><span class="experience__skill-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="4" fill="#310a2b"/><text x="16" y="22" text-anchor="middle" fill="#ff61f6" font-family="Arial" font-size="16">Xd</text></svg></span><span class="experience__skill-name">Adobe XD</span></div>
+        <div class="experience__skill"><span class="experience__skill-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="4" fill="#001e36"/><text x="16" y="22" text-anchor="middle" fill="#31a8ff" font-family="Arial" font-size="16">Ps</text></svg></span><span class="experience__skill-name">Photoshop</span></div>
+        <div class="experience__skill"><span class="experience__skill-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="2" width="18" height="28" rx="5" fill="#ff754a"/><path d="M13 9h6v14h-6z" stroke="white" stroke-width="2" fill="none"/></svg></span><span class="experience__skill-name">Illustrator</span></div>
+        <div class="experience__skill"><span class="experience__skill-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="5" fill="#ff4088"/><circle cx="10" cy="10" r="2" fill="white"/><path d="M10 15v10m7-10v10m0-6c0-6 7-6 7 0v6" stroke="white" stroke-width="3" fill="none"/></svg></span><span class="experience__skill-name">InVision</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="experience__tabs" role="tablist" aria-label="Riwayat karier dan pendidikan">
+        <button class="experience__tab" type="button" id="experience-work-tab" role="tab" aria-selected="true" aria-controls="experience-work">Professional Experience</button>
+        <button class="experience__tab" type="button" id="experience-education-tab" role="tab" aria-selected="false" aria-controls="experience-education" tabindex="-1">Education</button>
+      </div>
+      <!-- Data contoh: ganti perusahaan, jabatan, dan tanggal dengan riwayat Anda. -->
+      <div id="experience-work" role="tabpanel" aria-labelledby="experience-work-tab" tabindex="0">
+        <ul class="experience__list">
+          <li class="experience__card"><span class="experience__company-icon" aria-hidden="true">H</span><div class="experience__details"><h3>Company Name</h3><p>Senior UI/UX Designer</p></div><div class="experience__period"><strong>2 Years</strong><span>2024 – Present</span></div></li>
+          <li class="experience__card"><span class="experience__company-icon" aria-hidden="true">B</span><div class="experience__details"><h3>Creative Studio</h3><p>Product Designer</p></div><div class="experience__period"><strong>2 Years</strong><span>2022 – 2024</span></div></li>
+          <li class="experience__card"><span class="experience__company-icon" aria-hidden="true">H</span><div class="experience__details"><h3>Design Agency</h3><p>Junior UI/UX Designer</p></div><div class="experience__period"><strong>1 Year</strong><span>2021 – 2022</span></div></li>
+        </ul>
+      </div>
+      <div id="experience-education" role="tabpanel" aria-labelledby="experience-education-tab" tabindex="0" hidden>
+        <!-- Data pendidikan berikut juga merupakan contoh. -->
+        <ul class="experience__list">
+          <li class="experience__card"><span class="experience__company-icon" aria-hidden="true">U</span><div class="experience__details"><h3>University Name</h3><p>Bachelor of Computer Science</p></div><div class="experience__period"><strong>4 Years</strong><span>2017 – 2021</span></div></li>
+          <li class="experience__card"><span class="experience__company-icon" aria-hidden="true">D</span><div class="experience__details"><h3>Design Bootcamp</h3><p>UI/UX Design Certification</p></div><div class="experience__period"><strong>6 Months</strong><span>2021</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('.experience').forEach(section => {
+    const tabs = [...section.querySelectorAll('[role="tab"]')];
+    function activate(tab) {
+      tabs.forEach(item => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+      });
+    }
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activate(tab));
+      tab.addEventListener('keydown', event => {
+        let next;
+        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') next = 0;
+        if (event.key === 'End') next = tabs.length - 1;
+        if (next !== undefined) { event.preventDefault(); activate(tabs[next]); tabs[next].focus(); }
+      });
+    });
+  });
+</script>
+</body>
+</html>
