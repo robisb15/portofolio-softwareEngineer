@@ -32,7 +32,7 @@ export default async function ProjectPage({ params }: Props) {
         <p className="eyebrow">{project.category}</p>
         <h1 id="project-title">{project.name}<span>.</span></h1>
         <p className="compact-description">{project.description}</p>
-        <ul className="compact-features" aria-label="Fitur utama">{project.features.map(feature => <li key={feature.title}>{feature.title}</li>)}</ul>
+        <ul className={`compact-features ${project.features.length > 4 ? 'features-two-col' : ''}`} aria-label="Fitur utama">{project.features.map(feature => <li key={feature.title}>{feature.title}</li>)}</ul>
         {!!project.technologies?.length && <ul className="compact-stack" aria-label="Teknologi">{project.technologies.flatMap(group => group.names).map(name => <li key={name}>{name}</li>)}</ul>}
         <div className="compact-actions"><a className="button primary" href={project.url} target="_blank" rel="noreferrer">Live Demo <span aria-hidden="true">↗</span><span className="sr-only">(tab baru)</span></a>{project.repositoryUrl && <a className="button secondary" href={project.repositoryUrl} target="_blank" rel="noreferrer">Repository</a>}</div>
       </section>

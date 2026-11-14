@@ -20,8 +20,8 @@ test('home opens a case study, lightbox restores focus, and project navigation w
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('/#projects');
   await page.locator('.project-link').first().click();
-  await expect(page).toHaveURL(/\/projects\/web-desa-platform$/);
-  const screenshot = page.getByRole('button', { name: /Perbesar:/ });
+  await expect(page).toHaveURL(/\/projects\/ots-audit$/);
+  const screenshot = page.getByRole('button', { name: /Perbesar:/ }).first();
   await screenshot.click();
   await expect(page.getByRole('dialog')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Tutup gambar' })).toBeFocused();
@@ -31,7 +31,7 @@ test('home opens a case study, lightbox restores focus, and project navigation w
   await screenshot.press('Enter');
   await page.getByRole('button', { name: 'Tutup gambar' }).click();
   await page.getByRole('navigation', { name: 'Project lainnya' }).getByRole('link', { name: /Next project/ }).click();
-  await expect(page).toHaveURL(/\/projects\/ppid-tebo$/);
+  await expect(page).toHaveURL(/\/projects\/jobtracker$/);
   await page.getByRole('link', { name: 'Back to Projects' }).click();
   await expect(page).toHaveURL(/\/#projects$/);
   expect(errors).toEqual([]);
