@@ -121,7 +121,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
     features: [
       { title: 'Galeri studi kasus proyek', description: 'Dokumentasi detail mengenai tujuan, arsitektur, dan fitur aplikasi yang telah dibangun.' },
       { title: 'Tata letak responsif', description: 'Desain antarmuka fleksibel yang nyaman diakses pada perangkat mobile, tablet, maupun desktop.' },
-      { title: 'Dukungan preferensi tema', description: 'Pilihan mode visual terang dan gelap dengan kontras warna yang teruji ramah mata.' },
       { title: 'Transisi animasi interaktif', description: 'Peralihan navigasi antarmuka yang halus menggunakan library animasi modern.' },
     ], technologies: [{ category: 'Frontend', names: ['React', 'Next.js', 'Tailwind CSS'] }, { category: 'Animation', names: ['Framer Motion'] }],
   },
