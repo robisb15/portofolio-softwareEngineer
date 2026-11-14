@@ -19,7 +19,7 @@ test('real content, assets and all six desktop sections fit the viewport', async
   const pdf = await request.get('/cv-robi-aulia-kurniawan.pdf');
   expect(pdf.status()).toBe(200);
   expect(pdf.headers()['content-type']).toContain('pdf');
-  for (const name of ['sidomulyo', 'ppid', 'ayunda', 'nakertrans', 'dmd', 'siga', 'lpju', 'pasar', 'portofolio', 'jobtracker']) expect((await request.get(`/projects/${name}.png`)).status()).toBe(200);
+  for (const name of ['sidomulyo', 'ppid', 'ayunda', 'nakertrans', 'dmd', 'siga', 'lpju', 'pasar', 'portofolio', 'jobtracker', 'ots']) expect((await request.get(`/projects/${name}.png`)).status()).toBe(200);
   expect(errors).toEqual([]);
 });
 
@@ -38,11 +38,11 @@ test('carousel reaches every project and returns to the first', async ({ page })
   const next = page.getByRole('button', { name: 'Proyek berikutnya' });
   const prev = page.getByRole('button', { name: 'Proyek sebelumnya' });
   await expect(prev).toBeDisabled();
-  for (let i = 0; i < 9; i++) { await next.click(); await page.waitForTimeout(150); }
+  for (let i = 0; i < 10; i++) { await next.click(); await page.waitForTimeout(150); }
   await expect(next).toBeDisabled();
-  await expect(page.locator('.gallery-status')).toContainText('10');
-  await expect(page.locator('.project-link')).toHaveCount(10);
-  for (let i = 0; i < 9; i++) { await prev.click(); await page.waitForTimeout(150); }
+  await expect(page.locator('.gallery-status')).toContainText('11');
+  await expect(page.locator('.project-link')).toHaveCount(11);
+  for (let i = 0; i < 10; i++) { await prev.click(); await page.waitForTimeout(150); }
   await expect(prev).toBeDisabled();
   await page.locator('#project-track').focus();
   await page.keyboard.press('ArrowRight');

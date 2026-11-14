@@ -141,4 +141,30 @@ export const projectDetails: Record<string, ProjectDetail> = {
       { src: '/projects/jobtracker-2.png', caption: 'Dasbor ringkasan statistik dan pelacakan status lamaran aktif' },
     ],
   },
+  ots: {
+    slug: 'ots-audit', projectType: 'Sistem audit web & mobile', platform: ['Web', 'Mobile (Flutter)'], audience: 'Auditor lapangan, manajemen operasional, dan pimpinan Anugerah Group.',
+    objective: 'Mendukung proses audit, verifikasi, serta monitoring kegiatan kunjungan lapangan secara terintegrasi, transparan, dan real-time.',
+    problem: 'Pengelolaan aktivitas audit lapangan secara manual menyulitkan pemantauan rute petugas, lambatnya sinkronisasi data temuan di lapangan, dan membutuhkan waktu lama untuk alur persetujuan laporan fisik.',
+    solution: 'Mengembangkan sistem OTS Audit berbasis web dan aplikasi mobile terintegrasi dengan RESTful API, RBAC, pelacakan aktivitas kunjungan, dan sistem persetujuan laporan berjenjang.',
+    features: [
+      { title: 'Dashboard & monitoring', description: 'Menampilkan ringkasan aktivitas, statistik laporan, grafik tren, dan perkembangan proses audit secara real-time.' },
+      { title: 'User & role management', description: 'Mengelola pengguna aplikasi beserta pengaturan hak akses dan perizinan berbasis peran (RBAC).' },
+      { title: 'Customer management', description: 'Mengelola basis data pelanggan dan entitas bisnis yang menjadi sasaran objek kunjungan audit.' },
+      { title: 'Jadwal kunjungan lapangan', description: 'Mengatur, mendistribusikan, dan memantau jadwal penugasan audit ke lokasi lapangan.' },
+      { title: 'Monitoring aktivitas petugas', description: 'Memantau aktivitas petugas dan perkembangan status kunjungan audit secara langsung.' },
+      { title: 'Pencatatan hasil audit', description: 'Mencatat hasil pemeriksaan, verifikasi data, dan dokumentasi temuan lapangan secara sistematis.' },
+      { title: 'Laporan OTS terpusat', description: 'Mengelola rekapitulasi dokumentasi dan arsip laporan hasil kegiatan audit lapangan.' },
+      { title: 'Approval laporan berjenjang', description: 'Alur pemeriksaan, validasi, dan persetujuan laporan audit oleh pimpinan atau pihak berwenang.' },
+    ], technologies: [
+      { category: 'Frontend Web', names: ['React', 'Next.js', 'Tailwind CSS'] },
+      { category: 'Mobile App', names: ['Flutter', 'Dart'] },
+      { category: 'Backend & API', names: ['NestJS', 'RESTful API', 'PostgreSQL'] },
+    ],
+    screenshots: [
+      { src: '/projects/ots-1.png', caption: 'Ikhtisar platform OTS Audit web dan aplikasi mobile' },
+      { src: '/projects/ots-4.png', caption: 'Dasbor utama web monitoring dan statistik audit lapangan' },
+      { src: '/projects/ots-2.png', caption: 'Tampilan aplikasi mobile petugas lapangan (Flutter)' },
+      { src: '/projects/ots-3.png', caption: 'Halaman autentikasi dan portal masuk sistem OTS Audit' },
+    ],
+  },
 };
