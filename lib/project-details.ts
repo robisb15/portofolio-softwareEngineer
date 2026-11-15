@@ -141,7 +141,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
   },
   ots: {
-    slug: 'ots-audit', projectType: 'Sistem audit web & mobile', platform: ['Web', 'Mobile (Flutter)'], audience: 'Auditor lapangan, manajemen operasional, dan pimpinan Anugerah Group.',
+    slug: 'ots-audit', projectType: 'Sistem audit web & mobile', platform: ['Web', 'Mobile (Flutter)'], audience: 'Auditor lapangan, manajemen operasional, dan pimpinan Anugerah Group Jambi.',
     objective: 'Mendukung proses audit, verifikasi, serta monitoring kegiatan kunjungan lapangan secara terintegrasi, transparan, dan real-time.',
     problem: 'Pengelolaan aktivitas audit lapangan secara manual menyulitkan pemantauan rute petugas, lambatnya sinkronisasi data temuan di lapangan, dan membutuhkan waktu lama untuk alur persetujuan laporan fisik.',
     solution: 'Mengembangkan sistem OTS Audit berbasis web dan aplikasi mobile terintegrasi dengan RESTful API, RBAC, pelacakan aktivitas kunjungan, dan sistem persetujuan laporan berjenjang.',
